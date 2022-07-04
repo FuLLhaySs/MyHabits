@@ -10,12 +10,12 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // задержка на LaunchScreen
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         try! FileManager.default.removeItem(atPath: NSHomeDirectory()+"/Library/SplashBoard")
 
            do {
-               sleep(10)
+               sleep(0)
            }
 
            return true

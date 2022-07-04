@@ -11,19 +11,31 @@ class HabitsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        setupConstraintsAndSubviwesHabits()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //   кнопка "Добавить"
+    let addTarget: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "Symbolcross"), for: .normal)
+        return button
+    }()
+    
+    
+    private func setupConstraintsAndSubviwesHabits() {
+        view.addSubview(addTarget)
+        
+    NSLayoutConstraint.activate([
+        
+        addTarget.topAnchor.constraint(equalTo: view.topAnchor, constant: 44),
+        addTarget.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 350),
+        addTarget.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 5),
+//        addTarget.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+        addTarget.heightAnchor.constraint(equalToConstant: 50),
+        addTarget.widthAnchor.constraint(equalToConstant: 50),
+        
+    ])
     }
-    */
-
 }
